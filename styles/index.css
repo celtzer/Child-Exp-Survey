@@ -1,0 +1,4 @@
+.step { display: none; }
+.step.active { display: block; }
+
+.nav { margin-top: 16px; display: flex; gap: 8px; }

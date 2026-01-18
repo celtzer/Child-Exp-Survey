@@ -1,0 +1,69 @@
+:root {
+    --fg: #000000;
+    --bg: #555555;
+    --muted: #bcd8ec;
+    --border: #bcd8ec;
+    --radius: 8px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0px;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+}
+
+label { display: block; margin: 12px 0; }
+
+input, button {
+    font: inherit;
+    padding: 8px 10px;
+}
+
+button {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+.quiz {
+    background-color: #f0f8ff;
+}
+.page {
+    max-width: 800px;   /* width of your main block */
+    margin: 0 auto;     /* center horizontally */
+    padding: 32px;      /* space inside the block */
+    background: #ffeaea;  /* main block color */
+    min-height: 100vh;  /* stretch to bottom */
+}
+.center-text {
+    text-align: center;
+}
+.btn {
+    display: inline-block;       /* lets padding work */
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;       /* remove underline */
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* Primary action */
+.btn.primary {
+    background: #007bff;
+    color: white;
+}
+
+/* Hover state */
+.btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+/* Click state */
+.btn:active {
+    transform: translateY(0);
+}

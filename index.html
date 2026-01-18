@@ -2,145 +2,190 @@
 <html lang ='en'>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/index.css">
     <title>ACES + BCES = Graph</title>
+
 </head>
 <body>
-
-<h1>Hello, Web</h1>
-
+<div class = "page">
+<h1>ACES + BCES</h1>
+<div id="progress"></div>
 <form id="ACESxBCES">
+    <div class="step" data-step="0">
     <fieldset>
-        <legend>1. Did you have at least one caregiver with whom you felt safe?</legend>
+        <legend>Did you have at least one caregiver with whom you felt safe?</legend>
 
         <label><input type="radio" name="BCES_1" value="1" required>Yes</label>
         <label><input type="radio" name="BCES_1" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="1">
     <fieldset>
-        <legend>2. Did you have at least one good friend?</legend>
+        <legend>Did you have at least one good friend?</legend>
 
         <label><input type="radio" name="BCES_2" value="1" required>Yes</label>
         <label><input type="radio" name="BCES_2" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="2">
     <fieldset>
-        <legend>3. Did you have beliefs that gave you comfort?</legend>
+        <legend>Did you have beliefs that gave you comfort?</legend>
 
         <label><input type="radio" name="BCES_3" value="1" required>Yes</label>
         <label><input type="radio" name="BCES_3" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="3">
     <fieldset>
-        <legend>4. Did you like school?</legend>
+        <legend>Did you like school?</legend>
 
         <label><input type="radio" name="BCES_4" value="1" required>Yes</label>
         <label><input type="radio" name="BCES_4" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="4">
     <fieldset>
-        <legend>5. Did you have at least one teacher who cared about you?</legend>
+        <legend>Did you have at least one teacher who cared about you?</legend>
 
         <label><input type="radio" name="BCES_5" value="1" required>Yes</label>
         <label><input type="radio" name="BCES_5" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="5">
     <fieldset>
-        <legend>6. Did you have good neighbors?</legend>
+        <legend>Did you have good neighbors?</legend>
 
         <label><input type="radio" name="BCES_6" value="1" required>Yes</label>
         <label><input type="radio" name="BCES_6" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="6">
     <fieldset>
-        <legend>7. Was there an adult (not a parent/caregiver or the person from #1) who could
+        <legend>Was there an adult (not a parent/caregiver or the person from #1) who could
             provide you with support or advice?</legend>
 
         <label><input type="radio" name="BCES_7" value="1" required>Yes</label>
         <label><input type="radio" name="BCES_7" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="7">
     <fieldset>
-        <legend>8. Did you have opportunities to have a good time?</legend>
+        <legend>Did you have opportunities to have a good time?</legend>
 
         <label><input type="radio" name="BCES_8" value="1" required>Yes</label>
         <label><input type="radio" name="BCES_8" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="8">
     <fieldset>
-        <legend>9. Did you like yourself or feel comfortable with yourself?</legend>
+        <legend>Did you like yourself or feel comfortable with yourself?</legend>
 
         <label><input type="radio" name="BCES_9" value="1" required>Yes</label>
         <label><input type="radio" name="BCES_9" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="9">
     <fieldset>
-        <legend>10. Did you have a predictable home routine, like regular meals and a regular
+        <legend>Did you have a predictable home routine, like regular meals and a regular
             bedtime?</legend>
 
         <label><input type="radio" name="BCES_10" value="1" required>Yes</label>
         <label><input type="radio" name="BCES_10" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="10">
     <fieldset>
-        <legend>11. Did you feel that you didn’t have enough to eat, had to wear dirty clothes, or
+        <legend>Did you feel that you didn’t have enough to eat, had to wear dirty clothes, or
             had no one to protect or take care of you?</legend>
 
         <label><input type="radio" name="ACES_1" value="1" required>Yes</label>
         <label><input type="radio" name="ACES_1" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="11">
     <fieldset>
-        <legend>12. Did you lose a parent through divorce, abandonment, death, or other reason?</legend>
+        <legend>Did you lose a parent through divorce, abandonment, death, or other reason?</legend>
 
         <label><input type="radio" name="ACES_2" value="1" required>Yes</label>
         <label><input type="radio" name="ACES_2" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="12">
     <fieldset>
-        <legend>13. Did you live with anyone who was depressed, mentally ill, or attempted suicide?</legend>
+        <legend>Did you live with anyone who was depressed, mentally ill, or attempted suicide?</legend>
 
         <label><input type="radio" name="ACES_3" value="1" required>Yes</label>
         <label><input type="radio" name="ACES_3" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="13">
     <fieldset>
-        <legend>14. Did you live with anyone who had a problem with drinking or using drugs, including
+        <legend>Did you live with anyone who had a problem with drinking or using drugs, including
             prescription drugs?</legend>
 
         <label><input type="radio" name="ACES_4" value="1" required>Yes</label>
         <label><input type="radio" name="ACES_4" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="14">
     <fieldset>
-        <legend>15. Did your parents or adultsin your home ever hit, punch, beat, or threaten to harm each other?</legend>
+        <legend>Did your parents or adultsin your home ever hit, punch, beat, or threaten to harm each other?</legend>
 
         <label><input type="radio" name="ACES_5" value="1" required>Yes</label>
         <label><input type="radio" name="ACES_5" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="15">
     <fieldset>
-        <legend>16. Did you live with anyone who went to jail or prison?</legend>
+        <legend>Did you live with anyone who went to jail or prison?</legend>
 
         <label><input type="radio" name="ACES_6" value="1" required>Yes</label>
         <label><input type="radio" name="ACES_6" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="16">
     <fieldset>
-        <legend>17. Did a parent or adult in your home ever swear at you, insult you, or put you down?</legend>
+        <legend>Did a parent or adult in your home ever swear at you, insult you, or put you down?</legend>
 
         <label><input type="radio" name="ACES_7" value="1" required>Yes</label>
         <label><input type="radio" name="ACES_7" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="17">
     <fieldset>
-        <legend>18. Did a parent or adult in your home ever hit, beat, kick, or physically hurt you in any way?</legend>
+        <legend>Did a parent or adult in your home ever hit, beat, kick, or physically hurt you in any way?</legend>
 
         <label><input type="radio" name="ACES_8" value="1" required>Yes</label>
         <label><input type="radio" name="ACES_8" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="18">
     <fieldset>
-        <legend>19. Did you feel that no one in your family loved you or thought you were special?</legend>
+        <legend>Did you feel that no one in your family loved you or thought you were special?</legend>
 
         <label><input type="radio" name="ACES_9" value="1" required>Yes</label>
         <label><input type="radio" name="ACES_9" value="0">No</label>
     </fieldset>
+    </div>
+    <div class="step" data-step="19">
     <fieldset>
-        <legend>20. Did you experience unwanted sexual contact (such as fondling or oral/anal/vaginal
+        <legend>Did you experience unwanted sexual contact (such as fondling or oral/anal/vaginal
             intercourse/penetration)?</legend>
 
         <label><input type="radio" name="ACES_10" value="1" required>Yes</label>
         <label><input type="radio" name="ACES_10" value="0">No</label>
     </fieldset>
-    <button type="submit">Submit</button>
+    </div>
+    <div class="nav">
+    <button type="button" id="backBtn">Back</button>
+    <button type="button" id="nextBtn">Next</button>
+    <button type="submit" id="submitBtn">Submit</button>
+    </div>
 </form>
-
-<canvas id="xyChart" width="800" height="400"></canvas>
-<!-- chart.js code -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</div>
 <!-- my code -->
-<script src="main.js"></script>
+<script src="script-files/main.js"></script>
+
 </body>
 </html>

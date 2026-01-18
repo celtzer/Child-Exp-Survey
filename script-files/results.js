@@ -1,5 +1,3 @@
-const form = document.getElementById("ACESxBCES");
-
 const canvas = document.getElementById("xyChart");
 const ctx = canvas.getContext("2d");
 const quadrantLinesAtFive = {
@@ -89,7 +87,8 @@ const chart = new Chart(ctx, {
     data: {
         datasets: [{
             label: "Responses",
-            data: points
+            data: points,
+            pointRadius: 8
         }]
     },
     options: {
@@ -113,25 +112,17 @@ const chart = new Chart(ctx, {
     },
     plugins: [quadrantLinesAtFive,quadrantLabelsPlugin]
 });
-form.addEventListener("submit", (e) => handleSurveySubmit(e));
-function handleSurveySubmit(e) {
-    e.preventDefault();
-    const formData = new FormData(form);
-    let ACES_sum = 0;
-    let BCES_sum = 0;
-    for (const [name, value] of formData.entries()) {
-        if(name[0] === "B"){
-            if(value === '1')BCES_sum++;
-        }else{
-            if(value === '1')ACES_sum++;
-        }
-    }
-    points.push({ x: ACES_sum, y: BCES_sum });
+
+const stored = localStorage.getItem("results");
+
+if (!stored) {
+    document.getElementById("scores").textContent =
+        "No results found. Please take the quiz.";
+} else {
+    const {ACES_sum, BCES_sum} = JSON.parse(stored);
+
+    document.getElementById("scores").textContent =
+        `ACES: ${ACES_sum}, BCES: ${BCES_sum}`;
+    points.push({x: ACES_sum, y: BCES_sum});
     chart.update();
-
-    form.reset();
-}
-
-function createABCESGraph(BCES_sum, ACES_sum){
-
 }
