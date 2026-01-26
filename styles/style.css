@@ -1,6 +1,6 @@
 :root {
     --fg: #000000;
-    --bg: #555555;
+    --bg: #555a56;
     --muted: #bcd8ec;
     --border: #bcd8ec;
     --radius: 8px;
@@ -31,10 +31,10 @@ button {
     background-color: #f0f8ff;
 }
 .page {
-    max-width: 800px;   /* width of your main block */
+    max-width: 70%;   /* width of your main block */
     margin: 0 auto;     /* center horizontally */
     padding: 32px;      /* space inside the block */
-    background: #ffeaea;  /* main block color */
+    background: #fbfbfb;  /* main block color */
     min-height: 100vh;  /* stretch to bottom */
 }
 .center-text {
@@ -66,4 +66,15 @@ button {
 /* Click state */
 .btn:active {
     transform: translateY(0);
+}
+.site-header {
+    background: #6b3e26;   /* nicer brown */
+    color: white;
+}
+.banner {
+    background: #6b3e26;
+    color: white;
+    padding: 24px 32px;
+    max-width: 70%;   /* width of your main block */
+    margin: 0 auto;
 }

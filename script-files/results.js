@@ -80,6 +80,9 @@ const quadrantLabelsPlugin = {
 };
 const wrap = document.querySelector(".chart-wrap");
 const tip = document.getElementById("quadTip");
+const select = document.getElementById("result_type");
+const blocks = document.querySelectorAll("[data-type]");
+const blurb = document.getElementById("blurb");
 
 const MID_X = 5;
 const MID_Y = 5;
@@ -126,18 +129,7 @@ const chart = new Chart(ctx, {
 
 const stored = localStorage.getItem("results");
 
-if (!stored) {
-    document.getElementById("scores").textContent =
-        "No results found. Please take the quiz.";
-} else {
-    const {ACES_sum, BCES_sum} = JSON.parse(stored);
-    localStorage.removeItem("results");
-    document.getElementById("scores").textContent =
-        `ACES: ${ACES_sum}, BCES: ${BCES_sum}`;
-    points.push({x: ACES_sum, y: BCES_sum});
-    chart.update();
-}
-function getQuadrant(x, y) {
+/*function getQuadrant(x, y) {
     // Define how you want boundaries handled when exactly = 5
     const right = x >= MID_X;
     const top = y >= MID_Y;
@@ -180,4 +172,43 @@ canvas.addEventListener("mousemove", (e) => {
     tip.style.left = `${e.clientX - wrapRect.left}px`;
     tip.style.top  = `${e.clientY - wrapRect.top}px`;
 });
-canvas.addEventListener("mouseleave", hideTip);
+*/
+function update_select_content(){
+        blocks.forEach(b => {
+            b.hidden = b.dataset.type !== select.value;
+        });
+}
+select.addEventListener("change", () => {
+    update_select_content();
+});
+//canvas.addEventListener("mouseleave", hideTip);
+if (!stored) {
+    document.getElementById("scores").textContent =
+        "No results found. Please take the quiz.";
+} else {
+    const {ACES_sum, BCES_sum} = JSON.parse(stored);
+    localStorage.removeItem("results");
+    document.getElementById("scores").textContent =
+        `ACES: ${ACES_sum}, BCES: ${BCES_sum}`;
+    points.push({x: ACES_sum, y: BCES_sum});
+    if(ACES_sum < 5){
+        if(BCES_sum < 5){
+            select.value = "Languishing";
+            blurb.innerHTML = "Languishing: Those with few adverse experiences and few positive/benevolent experiences. May feel empty and unmotivated.";
+        }else{
+            select.value = "Flourishing";
+        }
+    }
+    else{
+        if(BCES_sum < 5){
+            select.value = "Floundering";
+            blurb.innerHTML = "Floundering: Those with many adverse experiences and few positive/benevolent experience. At serious risk of mental illnesses like depression and Anxiety, as they lack tools to cope.";
+        }else{
+            select.value = "Struggling";
+            blurb.innerHTML = "Struggling: Those with many adverse experiences and many positive experiences. They often feel frustrated because they have many strengths but may be held back by their symptoms.";
+        }
+
+    }
+    chart.update();
+    update_select_content();
+}

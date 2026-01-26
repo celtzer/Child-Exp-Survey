@@ -16,3 +16,62 @@
     pointer-events: none; /* don’t block the mouse */
     transform: translate(10px, 10px); /* offset from cursor */
 }
+.email-submission {
+    margin-top: 48px;
+    padding: 32px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+.email-submission h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.4rem;
+}
+
+.email-submission form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.email-submission label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.email-submission input,
+.email-submission textarea {
+    margin-top: 6px;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+}
+
+.email-submission textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.email-submission button {
+    align-self: flex-start;
+    padding: 10px 18px;
+    background: #6b3e26;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.email-submission button:hover {
+    filter: brightness(1.05);
+}
+
+.email-submission button:active {
+    transform: translateY(1px);
+}
