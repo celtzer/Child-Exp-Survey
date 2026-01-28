@@ -63,10 +63,7 @@ button {
     filter: brightness(1.05);
 }
 
-/* Click state */
-.btn:active {
-    transform: translateY(0);
-}
+
 .site-header {
     background: #6b3e26;   /* nicer brown */
     color: white;
