@@ -87,10 +87,10 @@ const blurb = document.getElementById("blurb");
 const MID_X = 5;
 const MID_Y = 5;
 const quadrantText = {
-    TL: "Flourishing: Those with few adverse experiences and many positive/benevolent experiences. These are those who can function more easily at a higher level",
-    TR: "Struggling: Those with many adverse experiences and many positive experiences. They often feel frustrated because they have many strengths but may be held back by their symptoms.",
-    BL: "Languishing: Those with few adverse experiences and few positive/benevolent experiences. May feel empty and unmotivated.",
-    BR: "Floundering: Those with many adverse experiences and few positive/benevolent experience. At serious risk of mental illnesses like depression and Anxiety, as they lack tools to cope.",
+    TL: "Flourishing: This pattern reflects childhood environments where supportive relationships, emotional safety, and stability were more consistently present, alongside relatively lower exposure to significant stressors. In research settings, this grouping is used to describe early contexts that tended to provide multiple protective inputs during development.",
+    TR: "Struggling: This pattern reflects childhood environments where meaningful sources of support coexisted with significant stress or disruption. Research uses this category to acknowledge that protective experiences and adversity can occur simultaneously, shaping development in complex and sometimes uneven ways.",
+    BL: "Languishing: This pattern reflects childhood environments where neither major adversity nor strong, consistent sources of support were prominent. In population studies, this category is used to describe early contexts marked more by absence—of connection, protection, or enrichment—than by overt hardship.",
+    BR: "Floundering: This pattern reflects childhood environments where stressful or adverse experiences were more common and reliable sources of support were limited. In research, this category is used to describe early contexts in which protective buffers were less available during periods of heightened stress.",
 };
 // Store points here
 const points = [];
@@ -195,7 +195,7 @@ if (!stored) {
     if(ACES_sum < 5){
         if(BCES_sum < 5){
             select.value = "Languishing";
-            blurb.innerHTML = "<b><u>Languishing:</u></b> Those with few adverse experiences and few positive/benevolent experiences. May feel empty and unmotivated.";
+            blurb.innerHTML = "<b><u>Languishing:</u></b> This pattern reflects childhood environments where neither major adversity nor strong, consistent sources of support were prominent. In population studies, this category is used to describe early contexts marked more by absence—of connection, protection, or enrichment—than by overt hardship.";
         }else{
             select.value = "Flourishing";
         }
@@ -203,10 +203,10 @@ if (!stored) {
     else{
         if(BCES_sum < 5){
             select.value = "Floundering";
-            blurb.innerHTML = "<b><u>Floundering:</u></b> Those with many adverse experiences and few positive/benevolent experience. At serious risk of mental illnesses like depression and Anxiety, as they lack tools to cope.";
+            blurb.innerHTML = "<b><u>Floundering:</u></b> This pattern reflects childhood environments where stressful or adverse experiences were more common and reliable sources of support were limited. In research, this category is used to describe early contexts in which protective buffers were less available during periods of heightened stress.";
         }else{
             select.value = "Struggling";
-            blurb.innerHTML = "<b><u>Struggling:</u></b> Those with many adverse experiences and many positive experiences. They often feel frustrated because they have many strengths but may be held back by their symptoms.";
+            blurb.innerHTML = "<b><u>Struggling:</u></b> This pattern reflects childhood environments where meaningful sources of support coexisted with significant stress or disruption. Research uses this category to acknowledge that protective experiences and adversity can occur simultaneously, shaping development in complex and sometimes uneven ways.";
         }
 
     }
